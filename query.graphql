@@ -1,0 +1,19 @@
+# A query mst resolve to a "concrete type"
+# i.e. https://stackoverflow.com/questions/46111514/field-me-of-type-user-must-have-a-selection-of-subfields
+
+query {
+  getBooks {
+    title
+    authors {
+      name
+      books {
+        title
+      }
+    }
+  }
+  getAuthor(name: "Carol Tavris") {
+    books {
+      title
+    }
+  }
+}
